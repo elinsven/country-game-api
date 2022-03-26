@@ -6,14 +6,13 @@ let port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get("/getCountries", (req, res) => {
-    res.send(mockData);
- /*    try {
+app.get("/getCountries", async (req, res) => {
+    try {
         const allCountries = await pool.query("SELECT * FROM countries");
         res.json(allCountries.rows);
     } catch (error) {
         console.error(error.message);
-    } */
+    }
 })
 
 
