@@ -1,10 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const pool = require("./database");
-const mockData = require("./mockData.json");
 let port = process.env.PORT || 3000;
 
-app.use(express.json());
+app.use(express.json(), cors());
 
 app.get("/getCountries", async (req, res) => {
     try {
