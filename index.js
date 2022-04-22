@@ -8,7 +8,7 @@ app.use(express.json(), cors());
 
 app.get("/getCountries", async (req, res) => {
     try {
-        const allCountries = await pool.query("SELECT * FROM countries");
+        const allCountries = await pool.query("SELECT * FROM countries ORDER BY country");
         res.json(allCountries.rows);
     } catch (error) {
         console.error(error.message);
